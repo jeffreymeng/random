@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Simple Sidebar - Start Bootstrap Template</title>
+    <title>Random</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -112,12 +112,12 @@
     <script>
     function generatename() {
         //random name selector
-        var names = $("#names").val().split("/");
+        var n = $("#names").val().split("/");
         var output = ""
         for (i = 0; i < $("#number-name").val(); i ++) {
-            output = output + "<br>" + names[Math.floor(Math.random()*names.length)];
+            output = output + "<br>" + n[Math.floor(Math.random()*n.length)];
         }
-        console.log(names);
+        console.log(n);
 
         $("#name-output").empty();
         $("#name-output").append(output);
