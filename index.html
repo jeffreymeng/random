@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Random
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Random Name Selector</a>
+                </li>
+                <li>
+                    <a href="#">Shortcuts</a>
+                </li>
+                <li>
+                    <a href="#">Overview</a>
+                </li>
+                <li>
+                    <a href="#">Events</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div data-spy="affix">
+                            <button href="#menu-toggle" id="menu-toggle" class="btn btn-sucuess" style="background-color:white;margin-top:15px;">
+                                <span class="glyphicon glyphicon-menu-hamburger
+                                "  aria-hidden="true">
+                                </span> Toggle menu
+                            </button>
+                        </div>
+                        <br>
+                        <br>
+                        <div id="name-selector">
+                            <h1>Random Name Selector</h1>
+                            <p>This selector will take in a list of names and generate a number of random names according to user input.<br>Please enter names or other words in the below input field. Each word should be seperated by a '/'. FOr example, to choose a random name between Bob, Billy, and Joe, I would enter 'Bob/Billy/Joe' into the input field. You can also choose how many random names to select.</p><br>
+                            <textarea class="form-control" id="names" placeholder="names, seperated by only a slash( / )"></textarea><br>
+                            <input class="form-control" type="number-name" placeholder="number of names to select" id="number"><br>
+                            <button id="enter" onclick="generatename();">Submit</button><br>
+                            <div id="name-content">
+                            <p class="well" id="name-output">Your name(s) will be selected here.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+    <script>
+    function generatename() {
+        //random name selector
+        var names = $("#names").val().split("/");
+        var output = ""
+        for (i = 0; i < $("#number-name").val(); i ++) {
+            var random = Math.floor(Math.random() * names.length) + 1;
+            console.log(names);
+            output = output + "<br>" + names[random]  
+        }
+        $("#name-output").empty();
+        $("#name-output").append(output);
+    }
+    </script>
+</body>
+
+</html>
