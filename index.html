@@ -116,7 +116,8 @@
         var output = ""
         for (i = 0; i < $("#number-name").val() + 1; i ++) {
             var random = Math.floor(Math.random() * names.length) + 1;
-            output = output + "<br>" + names[random]  
+            output = output + "<br>" + names[random]
+            console.log(random)  
         }
         console.log(names);
 
