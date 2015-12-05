@@ -114,11 +114,12 @@
         //random name selector
         var names = $("#names").val().split("/");
         var output = ""
-        for (i = 0; i < $("#number-name").val(); i ++) {
+        for (i = 0; i < $("#number-name").val() + 1; i ++) {
             var random = Math.floor(Math.random() * names.length) + 1;
-            console.log(names);
             output = output + "<br>" + names[random]  
         }
+        console.log(names);
+
         $("#name-output").empty();
         $("#name-output").append(output);
     }
